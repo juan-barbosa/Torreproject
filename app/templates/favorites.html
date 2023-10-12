@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Favorites</title>
+</head>
+<body>
+    <h2>Your Favorites</h2>
+    <a href="{{ url_for('back') }}"><button id="Back_button">Go back</button></a>
+    <div class="results-container">
+        {% for favorite in favorites %}
+        <div class="result-box">
+            <div class="result-image">
+                <img src="{{ favorite.image_url }}" alt="{{ favorite.name }}">
+            </div>
+            <div class="result-details">
+                <h3>{{ favorite.name }}</h3>
+                <p1>{{ favorite.description }}</p1>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

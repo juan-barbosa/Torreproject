@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Search in Torre.ai</title>
+</head>
+<body>
+    <h1>Find Professionals in Torre!</h1>
+    <form action="/search" method="POST"> 
+        <input id='search-input' type="text" name="query" placeholder="Who are you looking for?">
+        <button type="submit" id="paper-plane-button"></button>
+    </form>
+
+    
+    <div>
+        <a href="{{ url_for('favorites') }}"><button id="Fav_pa">Favorites</button></a>
+    </div>
+</body>
+</html>
