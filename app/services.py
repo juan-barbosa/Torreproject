@@ -3,7 +3,7 @@ from app.models import FavoriteResult
 import requests
 import json
 
-def search_torre(query):
+def search_torre(query, result_limit):
     api_url = "https://torre.ai/api/entities/_searchStream"
 
     headers = {
@@ -14,7 +14,7 @@ def search_torre(query):
     params = {
         'query': query,
         'identityType': 'person',
-        'limit': 10,
+        'limit': result_limit,
         'meta': True,
         'excluding': [],
         'excludedPeople': [],
@@ -41,7 +41,7 @@ def search_torre(query):
         return results 
 
     except requests.exceptions.RequestException as e:
-        print(f"Error de solicitud a la API de Torre: {e}")
+        print(f"Request error to Torre Api: {e}")
         return []  
 
 def add_favorite(name, user, image_url, description):

@@ -15,8 +15,13 @@ def index():
 @app.route('/search', methods=['POST'])
 def search():
     query = request.form.get('query')
-    results = search_torre(query)
+    result_limit=request.form.get('result_limit')
+    if not result_limit:
+        result_limit=10
+    results = search_torre(query, result_limit)
     return render_template('results.html', results=results)
+
+
     
  
 # Add / Remove from favorites

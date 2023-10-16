@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     const addToFavoritesButtons = document.querySelectorAll(".add-to-favorites-button");
 
-    // Obtén la lista de perfiles en favoritos del almacenamiento local
+    // Get a favorites list from local storage
     const favoritesList = JSON.parse(localStorage.getItem("favoritesList")) || [];
 
     addToFavoritesButtons.forEach(button => {
@@ -15,29 +15,53 @@ document.addEventListener("DOMContentLoaded", function () {
             if (!isFavorited) {
                 button.classList.add("favorited");
                 addFavorite(username, user, image_url, description);
-                // Agrega el perfil a la lista de favoritos
+                // Add the profile to favorites list
                 favoritesList.push(username);
             } else {
                 button.classList.remove("favorited");
                 removeFavorite(username);
-                // Elimina el perfil de la lista de favoritos
+                // Remove the profile from favorites list
                 const index = favoritesList.indexOf(username);
                 if (index !== -1) {
                     favoritesList.splice(index, 1);
                 }
             }
 
-            // Guarda la lista de favoritos en el almacenamiento local
+            // Save the favorites list in the local storage
             localStorage.setItem("favoritesList", JSON.stringify(favoritesList));
         });
 
-        // Verifica si el perfil está en la lista de favoritos y aplica el estilo apropiado
+        // Check if the profile is the favorites list and apply the respective design
         const username = button.getAttribute("data-username");
         if (favoritesList.includes(username)) {
             button.classList.add("favorited");
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const toggleButton = document.getElementById("toggle-buttons-container");
+    const searchForm = document.getElementById("result_lim");
+
+    toggleButton.addEventListener("click", function () {
+        // Alternate "preferences" visibility
+        if (searchForm.style.display === "none" || !searchForm.style.display) {
+            searchForm.style.display = "block";
+        } else {
+            searchForm.style.display = "none";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const container = document.getElementById("toggle-buttons-container");
+    const button = document.getElementById("toggle-search-button");
+
+    container.addEventListener("click", function () {
+        button.classList.toggle("rotated");
+    });
+});
+
 
 
 function addFavorite(name, user, image_url, description) {
@@ -82,3 +106,4 @@ function removeFavorite(name) {
         }, 5000); 
     });
 }
+

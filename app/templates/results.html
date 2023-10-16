@@ -15,7 +15,10 @@
             <a href="{{ url_for('favorites') }}" class="button-container">
                 <button id="Fav_pa">Your Favorites</button>
             </a>
-            <a href="{{ url_for('back') }}"><button id="Back_button">Go back</button></a>
+            <a href="{{ url_for('back') }}">
+                <button id="Back_button">Go back</button>
+            </a>
+        
         </nav>
     </header>
 
@@ -61,6 +64,7 @@
     <div class="notification-container"></div>
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
+    
 
 </body>
 </html>

@@ -6,17 +6,25 @@
 </head>
 <body>
     <h1>Find Professionals in Torre!</h1>
-    <form action="/search" method="POST"> 
-        <input id='search-input' type="text" name="query" placeholder="Who are you looking for?">
-        <button type="submit" id="paper-plane-button"></button>
-    </form>
-
+    <div id="search-container">
+        <form action="/search" method="POST" id="search-form">
+            <input id='search-input' type="text" name="query" placeholder="Who are you looking for?">
+            <input type="number" name="result_limit" id='result_lim'placeholder=" Result Limit">
+            <button type="submit" id="paper-plane-button"></button>
+        </form>
+        <div id="toggle-buttons-container">
+            <button id="toggle-search-button"></button>
+            <button  id="toggle-search-button-text">Preferences</button>
+        </div>
+    </div>
     
+
     <div>
         <a href="{{ url_for('favorites') }}" class="button-container">
             <button id="Fav_pa">Your Favorites</button>
         </a>
-    </div>    
+    </div>
 
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
