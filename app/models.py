@@ -5,3 +5,4 @@ class FavoriteResult(db.Model):
     name = db.Column(db.String(80), unique=True, nullable=False)
     image_url = db.Column(db.String(120), unique=True, nullable=False)
     description = db.Column(db.String(80), nullable=False)
+    user = db.Column(db.String(80), nullable=False)  

@@ -10,15 +10,30 @@
     <div class="results-container">
         {% for favorite in favorites %}
         <div class="result-box">
-            <div class="result-image">
-                <img src="{{ favorite.image_url }}" alt="{{ favorite.name }}">
-            </div>
-            <div class="result-details">
-                <h3>{{ favorite.name }}</h3>
-                <p1>{{ favorite.description }}</p1>
-            </div>
+            <section class="result-favorites-container">
+                <div class="add-to-favorites" data-username="{{ favorite.name }}">
+                    <button class="add-to-favorites-button
+                        {% if favorite.name in favorites|map(attribute='name') %}favorited{% endif %}"
+                        id="fav-button-{{ favorite.name }}"
+                        data-username="{{ favorite.name }}"
+                        data-image="{{ favorite.image_url | default('', true) }}"
+                        data-description="{{ favorite.description | default('', true) }}"
+                        data-user="{{favorite.user | default('', true)}}"></button>
+                </div>
+            </section>
+            <a href="https://torre.ai/{{ favorite.user }}" target="_blank">
+                <div class="result-image">
+                    <img src="{{ favorite.image_url }}" alt="{{ favorite.name }}">
+                </div>
+                <div class="result-details">
+                    <h3>{{ favorite.name }}</h3>
+                    <p1>{{ favorite.description }}</p1>
+                </div>
+            </a>
         </div>
         {% endfor %}
     </div>
+    
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
