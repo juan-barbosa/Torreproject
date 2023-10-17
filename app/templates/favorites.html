@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Favorites</title>
 </head>
 <body>
+    <!-- Heading for Favorite Results -->
     <h2>Your Favorites</h2>
-    <a href="{{ url_for('back') }}"><button id="Back_button">Go back</button></a>
+
+    <!-- Go Back To The Search Input -->
+    <a href="{{ url_for('back') }}">
+        <button id="Back_button">Go back</button>
+    </a>
+
+    <!-- Results Container -->
     <div class="results-container">
         {% for favorite in favorites %}
+        <!-- Single Result Box -->
         <div class="result-box">
             <section class="result-favorites-container">
                 <div class="add-to-favorites" data-username="{{ favorite.name }}">
+                    <!-- Add to Favorites Button -->
                     <button class="add-to-favorites-button
                         {% if favorite.name in favorites|map(attribute='name') %}favorited{% endif %}"
                         id="fav-button-{{ favorite.name }}"
@@ -21,10 +31,15 @@
                         data-user="{{favorite.user | default('', true)}}"></button>
                 </div>
             </section>
+
+            <!-- Link to External Profile -->
             <a href="https://torre.ai/{{ favorite.user }}" target="_blank">
+                <!-- Result Image -->
                 <div class="result-image">
                     <img src="{{ favorite.image_url }}" alt="{{ favorite.name }}">
                 </div>
+
+                <!-- Result Details -->
                 <div class="result-details">
                     <h3>{{ favorite.name }}</h3>
                     <p1>{{ favorite.description }}</p1>
@@ -34,6 +49,7 @@
         {% endfor %}
     </div>
     
+    <!-- Include JavaScript File -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>

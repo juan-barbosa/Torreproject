@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Search Results</title>
 </head>
@@ -12,13 +12,12 @@
         <h1 class="results-tittle">Take a look at these results...</h1>
         <!-- Navigation Menu -->
         <nav>
-            <a href="{{ url_for('favorites') }}" class="button-container">
-                <button id="Fav_pa">Your Favorites</button>
+            <a href="{{ url_for('favorites') }}" class="button-container-results">
+                <button id="Fav_pa-results">Your Favorites</button>
             </a>
             <a href="{{ url_for('back') }}">
                 <button id="Back_button">Go back</button>
             </a>
-        
         </nav>
     </header>
 
@@ -62,7 +61,6 @@
 
     <!-- Notification Container -->
     <div class="notification-container"></div>
-
     <script src="{{ url_for('static', filename='script.js') }}"></script>
     
 

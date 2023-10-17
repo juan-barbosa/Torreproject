@@ -1,30 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!-- Stylesheet -->
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     <title>Search in Torre.ai</title>
 </head>
 <body>
+    <!-- Main Heading -->
     <h1>Find Professionals in Torre!</h1>
+
+    <!-- Search Container -->
     <div id="search-container">
+        <!-- Search Form -->
         <form action="/search" method="POST" id="search-form">
             <input id='search-input' type="text" name="query" placeholder="Who are you looking for?">
-            <input type="number" name="result_limit" id='result_lim'placeholder=" Result Limit">
+            <input type="number" name="result_limit" id='result_lim' placeholder=" Result Limit">
             <button type="submit" id="paper-plane-button"></button>
         </form>
+
+        <!-- Toggle Buttons Container -->
         <div id="toggle-buttons-container">
             <button id="toggle-search-button"></button>
-            <button  id="toggle-search-button-text">Preferences</button>
+            <button id="toggle-search-button-text">Preferences</button>
         </div>
     </div>
-    
 
+    <!-- Favorites Link -->
     <div>
         <a href="{{ url_for('favorites') }}" class="button-container">
             <button id="Fav_pa">Your Favorites</button>
         </a>
     </div>
 
+    <!-- JavaScript File -->
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
