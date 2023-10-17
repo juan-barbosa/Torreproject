@@ -1,5 +1,4 @@
 /* Background (mobile) */
-
 body {
     font-family: "Arial";
     height: 100%;
@@ -28,6 +27,7 @@ body::after {
     bottom: 40%;
     z-index: -1;
 }
+
 
 /*Search input (mobile) */
 form {
@@ -130,11 +130,11 @@ input[type="text"]:focus {
 
 /* Texts (mobile) */
 h1 {
-    font-size: 50px;
-    width: 70%;
+    font-size: 70px;
+    width: 94.5%;
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 10%;
+    left: 3%;
 }
 
 h2{
@@ -161,6 +161,7 @@ h3{
 }
 
 
+/* Navigation Buttons (mobile) */
 #Back_button{
     background-color: rgb(234, 198, 20);
     font-family: Arial, Helvetica, sans-serif;
@@ -175,7 +176,8 @@ h3{
     left: 3%;
 }
 
-/* Favorites button (mobile) */
+
+/* Favorites page button (mobile) */
 .button-container {
     position: absolute;
     display: inline-block;
@@ -215,6 +217,8 @@ h3{
 
 }
 
+
+/* Favorites page button in results.html (mobile) */
 .button-container-results {
     position: absolute;
     display: inline-block;
@@ -254,6 +258,7 @@ h3{
 }
 
 
+/* Profiles (mobile) */
 .results-container {
     display: flex;
     flex-wrap: wrap;
@@ -326,11 +331,11 @@ a:visited {
     position: relative;
     top: -10%;
     left: -5%;
-    height: 160px;
+    height: auto;
 }
 
 
-/* Add to favorites */
+/* Add / Remove favorites button (mobile) */
 .add-to-favorites-button {
     width: 80px;
     height: 80px; 
@@ -361,8 +366,7 @@ a:visited {
 }
 
 
-
-
+/* Add / Remove favorite notification (mobile) */
 .notification {
     font-family: Arial, Helvetica, sans-serif;
     position: fixed;
@@ -376,6 +380,7 @@ a:visited {
     padding: 25px;
     transition: top 0.5s;
     font-size: 25px;
+    z-index: 999;
 }
 
 .notification.show {
@@ -398,8 +403,424 @@ a:visited {
 }
 
 
+
+/*    !!!   */
+/* Horizontal Mobile Screen / Tablet Screen */
+
+@media screen and (min-width: 768px) and (orientation: landscape){
+    /* Background (Tablet) */
+    body {
+        font-family: "Arial";
+        height: 100%;
+        width: 100%;
+        color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-image: url('Dark.jpg'); 
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed; 
+        background-position: center center; 
+    }
+    
+    body::after {
+        content: "";
+        background-image: url('Torre_logo.png'); 
+        background-size: 925px 350px;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 40%;
+        z-index: -1;
+    }
+    
+
+    /*Search input (Tablet) */
+    form {
+        background-color: #333;
+        width: 450px;
+        min-height: 60px;
+        padding: 30px;
+        border-radius: 30px;
+        position: absolute;
+        top: 30.5%;
+        left: 10%;
+    }
+    
+    #paper-plane-button {
+        width: 90px;
+        height: 90px; 
+        background-image: url('Search_button.png'); 
+        background-color: #007bff00;
+        background-size: 90px 90px; 
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 10%;
+        left: 79%;
+        transition: transform 0.3s;
+    
+    }
+    
+    #paper-plane-button:hover {
+        transform: scale(1.2);
+    }
+    
+    input[type="text"]:focus {
+        font-family: "Arial";
+        background-color: #444;
+        color: #ffffff;
+        border: 1px solid gold; 
+        padding: 10px;
+        border-radius: 5px;
+        border: 3px solid rgba(255, 255, 255, 0.703); 
+        transition-duration: 0.3s;
+        outline: none;
+    }
+    
+    [type="text"] {
+        padding: 15px;
+        font-size: 27px;
+    }
+
+    #result_lim{
+        display: none;
+        font-size: 28px;
+        width: 180px;
+        min-height: 35px;
+        border: 2px solid goldenrod;
+        border-radius: 8px;
+        position: absolute;
+        top: 140%;
+        left: 34%;
+    }
+    
+    #toggle-buttons-container {
+        position: absolute;
+        top: 37%;
+        left: 22%;
+    }
+    #toggle-search-button {
+        width: 0px;
+        height: 0px;
+        border-left: 19px solid rgba(218, 165, 32, 0.600);
+        border-top: 13px solid transparent;
+        border-bottom: 13px solid transparent;
+        border-right: 0px solid transparent; 
+        background-color: transparent;
+        cursor: pointer;
+        position: absolute  ;
+        top: 80px;
+        left: 25px;
+        transition: transform 0.3s;
+        transform-origin: 25% 50%;
+        }
+    
+    #toggle-search-button-text {
+        width: 165px;
+        font-size: 28px;
+        background-color: rgb(0, 0, 0, 0.600);
+        color: rgba(250, 235, 215, 0.600);
+        border: transparent;
+        border-radius: 7px;
+        position: absolute;
+        top: 77px;
+        left: 50px;
+        cursor: pointer;
+    }
+    
+    .rotated {
+        transform: rotate(90deg);
+    }
+    
+    
+    /* Texts (Tablet) */
+    h1 {
+        font-size: 50px;
+        width: 70%;
+        position: absolute;
+        top: 10%;
+        left: 15%;
+    }
+    
+    h2{
+        font-size: 50px;
+        width: 50%;
+        position: absolute;
+        top: 4%;
+        left: 35%;
+    }
+    
+    h3{
+        font-family: "Arial";
+        font-size: 40px;
+        text-decoration: none;
+        color: goldenrod;
+    }
+    
+    .results-tittle {
+        width: 82%;
+        font-size: 40px;
+        position: absolute;
+        top: 6%;
+        left: 20%;
+    }
+    
+
+    /* Navigation buttons (Tablet) */
+    #Back_button{
+        background-color: rgb(234, 198, 20);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        width: 130px;
+        min-height: 40px;
+        padding: 10px;
+        border-radius: 10px;
+        position: absolute;
+        cursor: pointer;
+        top: 5%;
+        left: 3%;
+    }
+    
+
+    /* Favorites page button (Tablet) */
+    .button-container {
+        position: absolute;
+        display: inline-block;
+        top: 75%;
+        left: 32%;
+        text-decoration: none;
+    
+    }
+    
+    #Fav_pa {
+        text-decoration: none;
+        font-size: 35px;
+        width: 335px;
+        min-height: 60px;
+        padding: 1px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #333;
+        color: antiquewhite;
+        text-align: center;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+    }
+    
+    #Fav_pa::before {
+        content: '';
+        background-image: url('Fav_button.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 70px; 
+        height: 70px; 
+        margin-right: 5px; 
+        text-decoration: none;
+    
+    }
+
+
+    /* Favorites page button in results.html (Tablet)*/
+    .button-container-results {
+        position: absolute;
+        display: inline-block;
+        top: 3.5%;
+        left: 80%;
+        text-decoration: none;
+    
+    }
+    
+    #Fav_pa-results {
+        text-decoration: none;
+        font-size: 25px;
+        width: 180px;
+        min-height: 60px;
+        padding: 1px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #333;
+        color: antiquewhite;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+    
+    #Fav_pa-results::before {
+        content: '';
+        background-image: url('Fav_button.png'); 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 53px; 
+        height: 50px; 
+        margin-right: 0px; 
+        text-decoration: none;
+    
+    }
+    
+
+    /* Profiles (Tablet) */
+    .results-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-height: 600vh; 
+        overflow-y: auto;
+        position: absolute;
+        top: 17%;
+        left: 0%;
+    }
+    
+    a {
+        color: #007bff92;
+        text-decoration: none; 
+    }
+    
+    a:visited {
+        color: #00aaff;
+    }
+    .result-box {
+        background-color: #333;
+        color: #fff;
+        border: 1px solid #444;
+        border-radius: 10px;
+        margin: 10px;
+        margin-left: 25x;
+        margin-right: 25px;
+        width: 350px;
+        padding: 30px;
+        padding-bottom: 0px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    
+    .result-image img {
+        max-width: 200%;
+        border-radius: 50%;
+    }
+    
+    
+    .result-image {
+        background-image: url('Pfp_background.png'); 
+        background-size: 325px 325px;
+        background-position: center;
+        width: 210px; 
+        height: 210px; 
+        border-radius: 150%; 
+        overflow: hidden;
+        position: relative;
+        top: -10%;
+        left: -10%;
+        z-index: 999;
+    }
+    
+    
+    .result-image img {
+        width: 84%;
+        height: 84%;
+        object-fit: cover;
+        position: absolute;
+        top: 8%;
+        left: 8%;
+    }
+    
+    
+    .result-details {
+        font-family: "Arial";
+        font-size: 25px;
+        text-decoration: none;
+        color: #fff;
+        position: relative;
+        top: -10%;
+        left: -5%;
+        height: auto;
+    }
+    
+    
+    /* Add / Remove favorites button (Tablet) */
+    .add-to-favorites-button {
+        width: 80px;
+        height: 80px; 
+        background-image: url('Pre_fav.png');
+        background-size: contain; 
+        background-color: #ac3f3f00;
+        border: #33333300;
+        cursor: pointer;
+        transition-duration: 0.3s;
+    }
+    
+    .add-to-favorites-button.favorited {
+        background-image: url('Fav_button.png'); 
+    }
+    
+    
+    .result-favorites-container {
+        position: relative; 
+        display: flex;
+        justify-content: flex-end; 
+    }
+    
+    
+    .add-to-favorites {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    
+    
+    /* Add / Remove favorite notification (Tablet) */
+    .notification {
+        font-family: Arial, Helvetica, sans-serif;
+        position: fixed;
+        top: 12%;
+        left: 22%;
+        width: 50%;
+        background-color: #cddc39;
+        color: rgb(0, 0, 0);
+        border-radius: 15px;
+        text-align: center;
+        padding: 25px;
+        transition: top 0.5s;
+        font-size: 25px;
+        z-index: 999;
+    }
+    
+    .notification.show {
+        top: 0; 
+    }
+    
+    .notification.hide {
+        top: -100px; 
+    }
+    
+    
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+/*     !!!    */
+/* PC Screen  */
+
 @media screen and (min-width: 1439px) {    
-    /* Background */
+    /* Background (PC Screen) */
     body::after {
         content: "";
         background-image: url('Torre_logo.png'); 
@@ -413,9 +834,9 @@ a:visited {
         bottom: 20%;
         z-index: -1; 
     }
-    
-    /* Search input */
 
+
+    /* Search input (PC Screen) */
     #search-container{
         position: absolute;
         top: 40% ;
@@ -519,8 +940,7 @@ a:visited {
     }
 
 
-
-    /* Texts */
+    /* Texts (PC Screen) */
     h1 {
         font-size: 60px;
         position: absolute;
@@ -556,14 +976,13 @@ a:visited {
         left: 30%;
     }
 
-    /* Favorites button */
+    /* Favorites page button (PC Screen) */
     .button-container {
         position: absolute;
         display: inline-block;
         top: 5%;
         left: 80%;
     }
-    
     
     #Fav_pa {
         font-size: 25px;
@@ -599,7 +1018,6 @@ a:visited {
         left: 80%;
     }
     
-    
     #Fav_pa-results {
         font-size: 25px;
         width: 237px;
@@ -627,9 +1045,7 @@ a:visited {
         margin-right: 10px;
     }
     
-    
-
-
+    /* Profiles (PC Screen) */
     .results-container {
         display: flex;
         flex-wrap: wrap;
@@ -667,7 +1083,6 @@ a:visited {
         border-radius: 50%;
     }
     
-    
     .result-image {
         background-image: url('Pfp_background.png'); 
         background-size: 225px 225px;
@@ -682,7 +1097,6 @@ a:visited {
         z-index: 999;
     }
     
-    
     .result-image img {
         width: 83%;
         height: 83%;
@@ -691,7 +1105,6 @@ a:visited {
         top: 13px;
         left: 13px;
     }
-
     
     .result-details {
         font-family: "Arial";
@@ -704,8 +1117,7 @@ a:visited {
         height: auto;
     }
     
-    
-    /* Add to favorites */
+    /* Add / Remove favorites button (PC Screen) */
     .add-to-favorites-button {
         width: 60px;
         height: 60px; 
@@ -736,6 +1148,7 @@ a:visited {
     }
     
 
+    /* Navigation button */
     #Back_button{
         background-color: rgb(234, 198, 20);
         font-family: Arial, Helvetica, sans-serif;
@@ -750,8 +1163,8 @@ a:visited {
         left: 80px;
     }
     
-    
-    
+
+    /* Add / Remove favorites notification (PC Screen) */
     .notification {
         position: fixed;
         top: 12%;
@@ -764,6 +1177,7 @@ a:visited {
         padding: 15px;
         transition: top 0.5s;
         font-size: 17px;
+        z-index: 999;
     }
     
     .notification.show {

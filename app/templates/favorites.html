@@ -36,13 +36,15 @@
             <a href="https://torre.ai/{{ favorite.user }}" target="_blank">
                 <!-- Result Image -->
                 <div class="result-image">
+                    {% if favorite.image_url %}
                     <img src="{{ favorite.image_url }}" alt="{{ favorite.name }}">
+                    {% endif %}
                 </div>
 
                 <!-- Result Details -->
                 <div class="result-details">
                     <h3>{{ favorite.name }}</h3>
-                    <p1>{{ favorite.description }}</p1>
+                    <p>{{ favorite.description }}</p>
                 </div>
             </a>
         </div>
